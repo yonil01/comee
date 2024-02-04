@@ -5,6 +5,8 @@ import 'package:app_come/screen/auth/verify.dart';
 
 
 class LoginPage extends StatelessWidget {
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,7 @@ class LoginPage extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.3,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('logo.jpg'),
+                  image: AssetImage('assets/logo.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -135,7 +137,7 @@ class LoginPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: SvgPicture.asset(
-                      'google.svg', // Reemplaza con la ruta correcta de tu archivo SVG de Google
+                      'assets/google.svg', // Reemplaza con la ruta correcta de tu archivo SVG de Google
                       height: 15.0, // Ajusta según sea necesario
                       width: 15.0, // Ajusta según sea necesario
                     ),

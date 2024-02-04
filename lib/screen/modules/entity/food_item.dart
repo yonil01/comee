@@ -17,7 +17,7 @@ class _FoodItemCardTestState extends State<FoodItemCardTest> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Image.network(
-              'assets/imagen1.png', // Asegúrate de reemplazar con una imagen válida
+              'https://img.freepik.com/psd-gratis/hamburguesa-ternera-fresca-aislada-sobre-fondo-transparente_191095-9018.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1706918400&semt=ais', // Asegúrate de reemplazar con una imagen válida
               width: 100,
               height: 100,
               fit: BoxFit.cover,

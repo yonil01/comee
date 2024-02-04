@@ -18,7 +18,7 @@ class VerifyPage extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.3,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('logo.jpg'),
+                  image: AssetImage('assets/logo.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),

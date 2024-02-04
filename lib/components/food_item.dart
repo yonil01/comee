@@ -10,7 +10,7 @@ class FoodItemCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Image.network(
-              'assets/imagen1.png', // Replace with your actual image asset path or network image URL
+              'https://img.freepik.com/psd-gratis/hamburguesa-ternera-fresca-aislada-sobre-fondo-transparente_191095-9018.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1706918400&semt=ais', // Replace with your actual image asset path or network image URL
               width: 100, // Adjust the image size as needed
               height: 100,
               fit: BoxFit.cover,
