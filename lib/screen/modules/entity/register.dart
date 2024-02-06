@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:app_come/utils/colors.dart';
 import 'package:app_come/screen/modules/entity/info.dart';
+import 'package:app_come/services/entity/entity_service.dart';
+import 'package:app_come/services/entity/person_service.dart';
+import 'package:app_come/services/reniec/entity_service.dart';
+import 'package:app_come/utils/spinner.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +25,18 @@ class MyApp extends StatelessWidget {
 }
 
 class RegisterEntityPage extends StatelessWidget {
+  final TextEditingController nameEntityController = TextEditingController();
+  final TextEditingController descriptionEntityController =
+      TextEditingController();
+  final TextEditingController telephoneEntityController =
+      TextEditingController();
+  final TextEditingController mobileController = TextEditingController();
+  final TextEditingController encodeEntityController = TextEditingController();
+
+  final TextEditingController dniPersonController = TextEditingController();
+  final TextEditingController namePersonController = TextEditingController();
+  final TextEditingController lastnamePersonController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +51,7 @@ class RegisterEntityPage extends StatelessWidget {
             children: <Widget>[
               buildSectionTitle(context, 'Información Restaurante'),
               TextFormField(
+                controller: nameEntityController,
                 decoration: InputDecoration(
                   labelText: 'Nombre',
                   labelStyle: TextStyle(
@@ -52,6 +69,7 @@ class RegisterEntityPage extends StatelessWidget {
 
               SizedBox(height: 8.0), // Reduced space to make fields closer
               TextFormField(
+                controller: descriptionEntityController,
                 decoration: InputDecoration(
                   labelText: 'Descripción',
                   labelStyle: TextStyle(
@@ -71,6 +89,7 @@ class RegisterEntityPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      controller: telephoneEntityController,
                       decoration: InputDecoration(
                         labelText: 'Telefono',
                         labelStyle: TextStyle(fontSize: 12),
@@ -84,6 +103,7 @@ class RegisterEntityPage extends StatelessWidget {
                   SizedBox(width: 8.0), // Space between the two fields
                   Expanded(
                     child: TextFormField(
+                      controller: mobileController,
                       decoration: InputDecoration(
                         labelText: 'Celular',
                         labelStyle: TextStyle(fontSize: 12),
@@ -134,6 +154,7 @@ class RegisterEntityPage extends StatelessWidget {
               SizedBox(height: 16.0),
               buildSectionTitle(context, 'Información Personal'),
               TextFormField(
+                controller: dniPersonController,
                 decoration: InputDecoration(
                   labelText: 'DNI',
                   labelStyle: TextStyle(
@@ -144,14 +165,32 @@ class RegisterEntityPage extends StatelessWidget {
                       EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
                   suffixIcon: IconButton(
                     icon: Icon(Icons.search),
-                    onPressed: () {
-                      // Perform search action
+                    onPressed: () async {
+
+                      // LoadingOverlay.showLoadingStatic(true);
+
+                     /* Map<String, dynamic> formData = {
+                          'dni': dniPersonController.text
+                        };
+
+                      Map<String, dynamic>? responseData = await GetDataReniec(formData);
+
+                      // Check if the response data is not null and contains a 'name' key
+                      if (responseData != null && responseData.containsKey('nombres')) {
+                        // Assign the 'name' value to namePersonController
+                        namePersonController.text = responseData['nombres'];
+                        lastnamePersonController.text = responseData['apellidoPaterno'] + ' ' + responseData['apellidoMaterno'];
+                      } else {
+                        // Handle the case where the response data is null or doesn't contain the 'name' key
+                        print('Error: Unable to retrieve name from response');
+}*/
                     },
                   ),
                 ),
               ),
               SizedBox(height: 8.0),
               TextFormField(
+                controller: namePersonController,
                 decoration: InputDecoration(
                   labelText: 'Nombre',
                   labelStyle: TextStyle(fontSize: 12), // Smaller label text
@@ -163,6 +202,7 @@ class RegisterEntityPage extends StatelessWidget {
               ),
               SizedBox(height: 8.0),
               TextFormField(
+                controller: lastnamePersonController,
                 decoration: InputDecoration(
                   labelText: 'Apellido',
                   labelStyle: TextStyle(fontSize: 12), // Smaller label text
@@ -190,6 +230,23 @@ class RegisterEntityPage extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
+                        
+                        /*Map<String, dynamic> formData = {
+                          'name': nameEntityController.text,
+                          'description': descriptionEntityController.text,
+                          'telephone': telephoneEntityController.text,
+                          'mobile': mobileController.text,
+                          'location_x': '12121313',
+                          'location_y': '1323232'
+                        };
+                        Map<String, dynamic> formDataPerson = {
+                          'name': nameEntityController.text,
+                          'lastname': descriptionEntityController.text
+                        };
+
+                        // Send data to the POST service
+                        CreateBasicInformationEntity(formData);
+                        CreateBasicInformationPerson(formData);*/
                         Navigator.push(
                           context,
                           MaterialPageRoute(

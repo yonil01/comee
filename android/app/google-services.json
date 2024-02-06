@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "949344830424",
+    "project_id": "app-comee",
+    "storage_bucket": "app-comee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949344830424:android:4eb247ec956375e90728ad",
+        "android_client_info": {
+          "package_name": "com.example.app_come"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACXb2heZS-2i17l2TY4TGaThPnSWxoVss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
